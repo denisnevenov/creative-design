@@ -1,0 +1,72 @@
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@use 'media' as *; 
+
+.navbar-button {
+  border: 1px solid rgba(0, 0, 0, .1);
+  background: transparent;
+  border-radius: $spacing-xxs;
+  width: $spacing-md;
+  height: $spacing-md;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  @include respond($breakpoint-lg) {
+    display: flex;
+  }
+}
+
+.nav {
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 3.75rem;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    @include respond($breakpoint-lg) {
+      flex-direction: column;
+      text-align: right;
+      gap: $spacing-sm;
+    }
+  }
+
+  li {
+    font-size: $spacing-xs-lg;
+  }
+
+  a {
+    color: $color-dark;
+
+    &:hover,
+    &:focus,
+    &.active {
+      color: $color-primary;
+    }
+  }
+}
+
+@include respond($breakpoint-lg) {
+  .navbar {
+    position: relative;
+    order: 3;
+  }
+
+  .nav {
+    position: fixed;
+    left: 100%;
+    top: $spacing-lg;
+    background-color: $color-light;
+    padding: $spacing-xs $spacing-xs $spacing-sm;
+    width: 100%;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+
+    &.show {
+      opacity: 1;
+      left: 0;
+    }
+  }
+}

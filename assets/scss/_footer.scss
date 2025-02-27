@@ -1,0 +1,166 @@
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@use 'media' as *; 
+
+.footer {
+  background-color: #262626;
+  color: $color-white;
+  padding-top: $spacing-xl;
+
+  .h3 {
+    margin-bottom: $spacing-sm-xs;
+  }
+
+  a {
+    color: $color-white;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: $spacing-xs;
+  }
+
+  address {
+    p {
+      display: flex;
+      gap: $spacing-xs;
+    }
+
+    .ico {
+      margin-top: 3px;
+    }
+  }
+
+  .logo {
+    margin-bottom: $spacing-sm;
+    margin-top: $spacing-xxs;
+    display: inline-block;
+  }
+
+  &-row {
+    @include flex-wrap;
+    justify-content: space-between;
+    gap: 9rem;
+    padding-bottom: $spacing-xs;
+
+    @include respond($breakpoint-xl) {
+      gap: $spacing-xxl;
+    }
+
+    @include respond($breakpoint-lg) {
+      gap: $spacing-md-lg;
+    }
+
+    @include respond($breakpoint-md) {
+      display: block;
+    }
+  }
+
+  &-col {
+    width: calc((100% - 24rem) / 3);
+    margin-bottom: $spacing-sm;
+
+    @include respond($breakpoint-xl) {
+      width: calc((100% - 16rem) / 3);
+    }
+
+    @include respond($breakpoint-lg) {
+      width: calc((100% - $spacing-xxl) / 3);
+    }
+
+    @include respond($breakpoint-md) {
+      width: auto;
+      max-width: 20rem;
+      margin: 0 auto $spacing-md;
+    }
+
+    &:nth-child(2) {
+      width: calc((100% - 12rem) / 3);
+
+      @include respond($breakpoint-xl) {
+        width: calc((100% - 16rem) / 3);
+      }
+
+      @include respond($breakpoint-lg) {
+        width: calc((100% - $spacing-xxl) / 3);
+      }
+
+      @include respond($breakpoint-md) {
+        width: auto;
+        max-width: 20rem;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &-col-navs {
+    @include flex-wrap;
+    justify-content: space-between;
+
+    @include respond($breakpoint-md) {
+      margin-bottom: $spacing-sm;
+    }
+  }
+}
+
+.instagram {
+  @include flex-wrap;
+  gap: $spacing-xxs;
+  align-items: center;
+  align-content: center;
+
+  &-post {
+    display: block;
+    overflow: hidden;
+    border-radius: $spacing-xxs;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5) url("../img/ico-instagram.png") no-repeat center center;
+      opacity: 0;
+    }
+
+    &:hover:after {
+      opacity: 1;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+.footer-copy {
+  @include flex-between;
+  background-color: $color-dark;
+  padding: $spacing-sm-xs $spacing-md-lg;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+  border-top-left-radius: $spacing-xxs;
+  border-top-right-radius: $spacing-xxs;
+  font-size: 0.875rem;
+
+  @include respond($breakpoint-sm) {
+    display: block;
+    text-align: center;
+  }
+
+  p {
+    margin: 0;
+  }
+}

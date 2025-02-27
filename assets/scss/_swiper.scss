@@ -1,0 +1,40 @@
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@use 'media' as *; 
+
+.swiper {
+  width: 100%;
+
+  &-slide {
+    @include flex-center;
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  &-pagination {
+    &-bullet {
+      background-color: #e0e0e0;
+      border: 2px solid #e0e0e0;
+      width: $spacing-xs;
+      height: $spacing-xs;
+      opacity: 1;
+
+      &-active {
+        background-color: $color-primary;
+      }
+    }
+  }
+}
+
+.swiper-testimonials {
+  padding-top: $spacing-md;
+
+  .swiper-pagination {
+    position: relative !important;
+    bottom: auto !important;
+    padding-top: $spacing-sm-xs;
+  }
+}

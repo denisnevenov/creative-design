@@ -1,0 +1,75 @@
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@use 'media' as *; 
+
+.header {
+  position: fixed;
+  top: $spacing-xxs;
+  left: 0;
+  width: 100%;
+  background-color: $color-white;
+  transition: all .3s ease-in-out;
+  padding: $spacing-xs 0;
+  z-index: 3;
+
+  @include respond($breakpoint-sm) {
+    top: 0;
+  }
+
+  &.active {
+    top: 0;
+    background-color: $color-light;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+  }
+
+  .text-link {
+    font-family: $font-stack-1; 
+    color: $color-dark;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  .header-inner {
+    @include flex-between;
+    gap: $spacing-xs;
+    padding: 0 5%;
+
+    @include respond($breakpoint-lg) {
+      padding-left: $spacing-xs;
+      padding-right: $spacing-xs;
+    }
+  }
+}
+
+.search-form {
+  width: 11.875rem;
+
+  @include respond($breakpoint-lg) {
+    margin-left: auto;
+  }
+
+  @include respond($breakpoint-sm) {
+    display: none;
+  }
+
+  .search-input {
+    border: 0;
+    padding: $spacing-xxs;
+    background: transparent;
+    width: 100%;
+    text-align: right;
+    outline: 0;
+    height: $spacing-sm-lg;
+    transition: all .3s;
+    font-size: $spacing-xs-lg;
+    background-color: rgba(0, 0, 0, 0);
+    font-family: $font-stack-1; 
+    border-radius: .25rem;
+
+    &:focus {
+      background-color: rgba(0, 0, 0, .1);
+    }
+  }
+}

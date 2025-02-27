@@ -1,0 +1,157 @@
+$font-family_1: monospace, monospace;
+$font-family_2: inherit;
+$background-color_1: transparent;
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+main {
+    display: block;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+
+pre, code, kbd, samp {
+    font-family: $font-family_1;
+    font-size: 1em;
+}
+
+a {
+    background-color: $background-color_1;
+}
+
+abbr[title] {
+    border-bottom: none;
+    text-decoration: underline dotted;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+img {
+    border-style: none;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: $font-family_2;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+    text-transform: none;
+    -webkit-appearance: button;
+
+    &::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
+
+    &:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
+}
+
+[type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+
+    &::-moz-focus-inner {
+        border-style: none;
+        padding: 0;
+    }
+
+    &:-moz-focusring {
+        outline: 1px dotted ButtonText;
+    }
+}
+
+fieldset {
+    padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+}
+
+progress {
+    vertical-align: baseline;
+}
+
+[type="checkbox"], [type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+[type="number"] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        height: auto;
+    }
+}
+
+[type="search"] {
+    -webkit-appearance: textfield;
+    outline-offset: -2px;
+
+    &::-webkit-search-decoration {
+        -webkit-appearance: none;
+    }
+}
+
+[type="file"] {
+    &::-webkit-file-upload-button {
+        -webkit-appearance: button;
+        font: inherit;
+    }
+}
+
+details {
+    display: block;
+}
+
+summary {
+    display: list-item;
+}
+
+template {
+    display: none;
+}
+
+[hidden] {
+    display: none;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}

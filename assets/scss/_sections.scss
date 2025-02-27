@@ -1,0 +1,380 @@
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@use 'media' as *; 
+
+.section-main {
+  padding-top: 16rem;
+  padding-bottom: $spacing-md;
+
+  @include respond($breakpoint-md) {
+    text-align: center;
+    padding-top: $spacing-xxl;
+    padding-bottom: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .h1 {
+    text-transform: uppercase;
+  }
+
+  .badge {
+    position: absolute;
+    bottom: 0;
+    right: $spacing-md-lg;
+    transform: rotate(30deg);
+
+    @include respond($breakpoint-xl) {
+      bottom: 0;
+    }
+
+    .ico {
+      transform: rotate(-30deg);
+    }
+  }
+
+  .text-small {
+    font-size: 7.5rem;
+    position: relative;
+    margin: 0 0 -4.5rem $spacing-md;
+
+    @include respond($breakpoint-md) {
+      font-size: 7rem;
+      margin: 0;
+    }
+
+    @include respond($breakpoint-sm) {
+      font-size: $spacing-md-lg;
+    }
+  }
+
+  .shape-flower {
+    margin: 0 10px -45px 60px;
+  }
+
+  .badge {
+    @include flex-center;
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    background-color: #2f80ed;
+    color: $color-white;
+    text-align: center;
+    flex-direction: column;
+    outline-offset: -$spacing-xs;
+    outline: 1px dashed $color-white;
+
+    @include respond($breakpoint-md) {
+      display: none;
+    }
+  }
+
+  .badge-info {
+    font-size: 1.188rem;
+
+    strong {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.items {
+  @include flex-wrap;
+  justify-content: center;
+  gap: $spacing-sm;
+  padding-top: 2.625rem;
+
+  @include respond($breakpoint-md) {
+    gap: $spacing-sm;
+  }
+
+  .item {
+    width: calc((100% - $spacing-md-lg) / 3);
+
+    @include respond($breakpoint-md) {
+      width: calc((100% - $spacing-sm) / 2);
+    }
+
+    @include respond($breakpoint-sm) {
+      width: 100%;
+      text-align: center;
+    }
+
+    .h3 {
+      margin-bottom: $spacing-sm-xs;
+    }
+
+    img {
+      display: block;
+      margin-bottom: $spacing-sm-xs;
+
+      @include respond($breakpoint-sm) {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+.ribbon {
+  width: 200%;
+  background-color: $color-light;
+  padding: $spacing-sm 0;
+  margin: -6rem 0 21rem;
+  transform: rotate(-9deg) translateX(-25%);
+
+  @include respond($breakpoint-xl) {
+    margin-top: -$spacing-md-lg;
+    margin-bottom: 9rem;
+  }
+
+  @include respond($breakpoint-md) {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    transform: rotate(0) translateX(0);
+  }
+
+  .h3 {
+    margin-bottom: 0;
+
+    @include respond($breakpoint-xl) {
+      font-size: $spacing-sm-xs;
+    }
+  }
+
+  .ribbon-inner {
+    @include flex-center;
+    padding: $spacing-sm;
+    gap: $spacing-xs;
+    background-color: $color-primary;
+    letter-spacing: $spacing-xxs;
+    color: $color-white;
+    transform: rotate(1.5deg);
+
+    @include respond($breakpoint-md) {
+      flex-wrap: wrap;
+      transform: rotate(0);
+    }
+  }
+}
+
+.content-row-holder {
+  padding-top: $spacing-xs;
+  margin-bottom: 4.75rem;
+
+  @include respond($breakpoint-xl) {
+    margin-bottom: $spacing-sm;
+  }
+
+  .content-row {
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+
+      .content {
+        padding-right: $spacing-sm;
+        padding-left: 0;
+        justify-content: flex-start;
+      }
+    }
+
+    @include flex-wrap;
+    align-items: center;
+
+    @include respond($breakpoint-sm) {
+      display: block;
+      margin-bottom: $spacing-sm;
+    }
+
+    picture {
+      width: 50%;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .content {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: $spacing-sm 0 $spacing-sm $spacing-sm;
+
+      @include respond($breakpoint-sm) {
+        width: 100%;
+        display: block;
+        padding: $spacing-xs;
+      }
+
+      .h3 {
+        margin-bottom: $spacing-xs-lg;
+      }
+
+      .content-inner {
+        max-width: 33rem;
+      }
+    }
+  }
+}
+
+.keyword {
+  padding: .75rem $spacing-sm-xs;
+  background-color: $color-dark;
+  border-radius: .75rem;
+  display: inline-block;
+  color: $color-white;
+  font-family: $font-stack-2;
+  margin-bottom: $spacing-xs-lg;
+}
+
+.logos {
+  @include flex-between;
+  gap: $spacing-sm;
+  padding-top: $spacing-sm;
+
+  @include respond($breakpoint-md) {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $spacing-md-lg;
+  }
+
+  @include respond($breakpoint-sm) {
+    gap: $spacing-sm;
+  }
+}
+
+.section-testimonials {
+  padding-top: $spacing-xxl;
+  padding-bottom: $spacing-xxl;
+
+  @include respond($breakpoint-xl) {
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+  }
+
+  .container {
+    background: url('../img/shape-quote.png') no-repeat calc(100% - $spacing-sm) 0;
+    position: relative;
+  }
+
+  .h5 {
+    margin-bottom: 0;
+  }
+
+  .testimonial-quote {
+    font-size: 1.563rem;
+    font-style: italic;
+    line-height: 1.6;
+
+    @include respond($breakpoint-sm) {
+      font-size: $spacing-xs-lg;
+    }
+  }
+
+  .testimonial-author {
+    font-size: $spacing-xs-lg;
+
+    small {
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.section-blog {
+  padding: $spacing-xxl 0;
+
+  @include respond($breakpoint-xl) {
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+  }
+
+  @include respond($breakpoint-md) {
+    text-align: center;
+  }
+
+  @include respond($breakpoint-sm) {
+    padding-bottom: $spacing-sm;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .shape-flower {
+    position: absolute;
+    bottom: -4rem;
+    left: 100%;
+    margin-left: $spacing-md;
+  }
+
+  .blog-posts {
+    @include flex-wrap;
+    gap: 1.563rem;
+    padding-top: $spacing-sm-lg;
+
+    @include respond($breakpoint-md) {
+      gap: $spacing-sm;
+      justify-content: center;
+    }
+
+    @include respond($breakpoint-sm) {
+      display: block;
+    }
+
+    .blog-post {
+      width: calc((100% - 3.126rem) / 3);
+
+      @include respond($breakpoint-md) {
+        width: calc((100% - $spacing-sm) / 2);
+        text-align: left;
+      }
+
+      @include respond($breakpoint-sm) {
+        width: 100%;
+        margin-bottom: $spacing-md;
+      }
+
+      .blog-post-link {
+        color: $color-dark;
+
+        &:hover {
+          .blog-post-title {
+            color: $color-primary;
+          }
+        }
+      }
+
+      picture {
+        display: block;
+        margin-bottom: 0.75rem;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .blog-post-meta {
+        margin-bottom: 0.625rem;
+      }
+    }
+  }
+}
+
+@include respond($breakpoint-lg) {
+  .section-main .h1 div:nth-child(2) {
+    text-align: right;
+  }
+}
+
+@include respond($breakpoint-md) {
+  .section-main .h1 div:nth-child(2) {
+    text-align: center;
+  }
+}

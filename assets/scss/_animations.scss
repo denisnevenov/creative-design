@@ -1,0 +1,39 @@
+.aos-delay {
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+            transition-delay: #{$i * 0.1}s;
+        }
+    }
+}
+
+.aos-hidden {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.aos-left {
+    transform: translateX(-2rem);
+}
+
+.aos-right {
+    transform: translateX(2rem);
+}
+
+.aos-top {
+    transform: translateY(2rem);
+}
+
+.aos-bottom {
+    transform: translateY(-2rem);
+}
+
+.aos-show {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .aos-hidden {
+        transition: none;
+    }
+}

@@ -1,0 +1,92 @@
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@use 'media' as *; 
+
+.ico-exp {
+  background: url("../img/ico-exp.png") no-repeat 0 0;
+  width: 62px;
+  height: 53px;
+}
+
+.ico-envelope {
+  background: url("../img/ico-envelope.png") no-repeat 0 0;
+  width: 20px;
+  height: 21px;
+}
+
+.ico-map-marker {
+  background: url("../img/ico-map-marker.png") no-repeat 0 0;
+  width: 20px;
+  height: 20px;
+}
+
+.ico-phone {
+  background: url("../img/ico-phone.png") no-repeat 0 0;
+  width: 20px;
+  height: 21px;
+}
+
+.shape-string {
+  background: url("../img/shape-string.png") no-repeat 0 0;
+  width: 186px;
+  height: 134px;
+  position: absolute;
+  top: $spacing-sm;
+  left: 100%;
+  margin-left: -3.75rem;
+
+  @include respond($breakpoint-lg){
+    display: none;
+  }
+}
+
+.shape-flower {
+  background: url("../img/shape-flower.png") no-repeat 0 0;
+  width: 178px;
+  height: 182px;
+
+  @include respond($breakpoint-lg){
+    display: none;
+  }
+}
+
+.shape-person {
+  background: url("../img/shape-person.png") no-repeat 0 0;
+  width: 332px;
+  height: 553px;
+  margin: -166px -45px -158px -65px;
+  position: relative;
+  z-index: 2;
+  
+  @include respond($breakpoint-md){
+    display: none;
+  }
+}
+
+.shape-circle {
+  background: url("../img/shape-circle.png") no-repeat 0 0;
+  width: 341px;
+  height: 171px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  z-index: 2;
+  margin-top: -13px;
+
+  @include respond($breakpoint-md){
+    display: none;
+  }
+}
+
+.shape-arrow-up {
+  background: url("../img/shape-arrow-up.png") no-repeat 0 0;
+  width: 178px;
+  height: 171px;
+  position: absolute;
+  top: $spacing-xl;
+  right: 100%;
+  z-index: 2;
+  margin-right: 6.25rem;
+}
+

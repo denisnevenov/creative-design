@@ -1,0 +1,151 @@
+@use 'variables' as *; 
+@use 'mixins' as *; 
+@use 'media' as *; 
+
+body {
+  font-family: $font-stack-2;
+  line-height: 1.75;
+  background-color: $color-white;
+  color: $color-dark;
+  margin: 0;
+  padding: 0;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  font-family: $font-stack-1;
+  margin: 0 0 $spacing-xs;
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.h1 {
+  font-size: 11.25rem;
+
+  @include respond($breakpoint-xl) {
+    font-size: 9rem;
+  }
+
+  @include respond($breakpoint-md) {
+    font-size: 7rem;
+  }
+
+  @include respond($breakpoint-sm) {
+    font-size: $spacing-md-lg;
+  }
+}
+
+.h2 {
+  font-size: $spacing-lg;
+
+  @include respond($breakpoint-xl) {
+    font-size: $spacing-md-lg;
+  }
+
+  @include respond($breakpoint-lg) {
+    font-size: $spacing-md;
+  }
+
+  @include respond($breakpoint-md) {
+    font-size: $spacing-sm-lg;
+  }
+}
+
+.h3 {
+  font-size: 1.875rem;
+}
+
+.h4 {
+  font-size: $spacing-sm-xs;
+}
+
+.h5 {
+  font-size: $spacing-xs;
+}
+
+ol,
+ul,
+p {
+  margin: 0 0 $spacing-xs;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.text-link {
+  font-size: $spacing-xs-lg;
+  text-decoration: underline;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: $color-primary !important;
+}
+
+.letter-spacing {
+  letter-spacing: $spacing-xxs;
+}
+
+.font-body {
+  font-family: $font-stack-2;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.container {
+  max-width: 83rem;
+  padding: 0 $spacing-xs;
+  margin: 0 auto;
+}
+
+.main {
+  overflow: hidden;
+}
+
+.section {
+  padding: $spacing-md-lg 0;
+}
+
+.section-bg-dark {
+  background-color: $color-dark;
+  color: $color-white;
+  padding: 5.5rem 0;
+}
+
+.section-bg {
+  background-color: $color-light;
+}
+
+.logo {
+  display: block;
+  background-color: $color-white;
+  padding: $spacing-xxs $spacing-xs;
+  border-radius: $spacing-xxs;
+
+  img {
+    display: block;  
+  }
+}
+
+.ico,
+.shape {
+  display: inline-block;
+}
